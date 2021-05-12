@@ -21,7 +21,6 @@
 // })
 
 const formulario = document.querySelector(".formulario")
-
 const azul = document.querySelector(".azul")
 const tituloForm = document.querySelector(".formulario__inner h2")
 
@@ -36,7 +35,7 @@ if (formulario) {
   function mudaFormCadastro() {
     formulario.classList.remove("loguin")
     formulario.classList.add("cadastro")
-    tituloForm.innerText ="Faça Seu Cadastro"
+    tituloForm.innerText = "Faça Seu Cadastro"
     gsap.to(azul, {
       background: "#e3fdff",
       duration: .5,
@@ -47,14 +46,13 @@ if (formulario) {
   function mudaFormLoguin() {
     formulario.classList.remove("cadastro")
     formulario.classList.add("loguin")
-    tituloForm.innerText ="Faça Seu Login"
+    tituloForm.innerText = "Faça Seu Login"
     gsap.to(azul, {
       background: "#7fcacf",
       duration: .5,
 
     })
   }
-
 
 }
 
@@ -63,9 +61,11 @@ const inputCPF = document.querySelectorAll(".input__cpf")
 inputCPF.forEach((i) => {
   i.addEventListener("focusout", ValidaCPF)
 })
+
 // inputCPF.forEach((i) => {
 //   i.addEventListener("keypress", ValidaCPF)
 // })
+
 function ValidaCPF() {
   var RegraValida = document.querySelector(".input__cpf").value;
   const containerInput = document.querySelector(".input__cpf-container")
@@ -101,12 +101,14 @@ function mCPF(cpf) {
 
 // mostra senha
 const botaoMostra = document.querySelectorAll(".show__password");
+
 function mostraSenha(event) {
   let input = event.target.nextElementSibling
   let item = event.target
-  input.type = input.type == 'text' ? 'password' : 'text';
 
-   input.type == 'text' ? item.classList.add("mostra") : item.classList.remove("mostra");
+  input.type = input.type == 'text' ? 'password' : 'text';
+  input.type == 'text' ? item.classList.add("mostra") : item.classList.remove("mostra");
+
 }
 botaoMostra.forEach((i) => {
   i.addEventListener("click", mostraSenha)

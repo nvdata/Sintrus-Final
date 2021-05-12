@@ -110,7 +110,6 @@ body {
       z-index: 1;
       transition: all .5s ease;
       left: 4px;
-
       top: 0;
       bottom: 0;
       margin: auto 0px;
@@ -176,7 +175,7 @@ body {
     right: 0;
     position: absolute;
     transition: all .4s ease;
-    transform: translateX(110%); 
+    transform: translateX(110%);
 
   }
 
@@ -214,7 +213,7 @@ body {
 //animation
 
 .formulario {
-  
+
   &.loguin {
     .formulario__wrapper.login {
       transform: translateX(0);
@@ -235,6 +234,7 @@ body {
   }
 
   &.cadastro {
+
     .formulario__wrapper.login {
       transform: translateX(-110%);
     }
@@ -258,5 +258,6 @@ body {
         color: #3c3c3b !important;
       }
     }
+    
   }
 }
