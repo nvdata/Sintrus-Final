@@ -1,0 +1,161 @@
+@mixin formulario__feito {
+  form {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.28);
+
+    border-radius: 3px;
+    padding: 45px 20px 20px;
+    margin-top: 100px;
+
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+
+    font-family: roboto, "Helvetica Neue", ; //retirar 
+
+  }
+
+
+  .input__box {
+    position: relative;
+    width: 300px;
+    height: 46px;
+    margin-bottom: 35px;
+
+    @include d(m) {
+      //RESPONSIVO
+      transform: scale(.9);
+      margin-bottom: 25px;
+
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.95);
+      border-radius: 3px;
+      background: transparent;
+      padding: 13px;
+      outline: none;
+      color: $cor-1;
+      font-weight: 400;
+      font-size: 16px;
+      transition: .5s ease;
+      padding-left: 35px;
+    }
+
+    span {
+      position: absolute;
+      top: 5px;
+      left: 30px;
+      padding: 10px;
+      display: inline-block;
+      color: $cor-4;
+      font-weight: 300;
+      font-size: 15px;
+      transition: .4s ease-in-out;
+      pointer-events: none;
+    }
+
+    input:focus~span,
+    input:valid~span {
+      transform: translateY(-32px) translateX(-40px);
+      font-size: 12px;
+      color: $cor-2;
+
+    }
+
+    input:focus~ion-icon,
+    input:valid~ion-icon {
+      color: $cor-2;
+
+    }
+
+
+
+    input:focus,
+    input:valid,
+    textarea:focus,
+    textarea:valid {
+      border: 1px solid $cor-2 !important;
+
+
+
+    }
+
+    ion-icon {
+      position: absolute;
+      top: 0px;
+      bottom: 0;
+      margin: auto 0;
+      left: 10px;
+      font-size: 20px;
+      color: $cor-4;
+    }
+  }
+
+  .ultimo {
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    margin: 0px;
+    width: 306px;
+    height: 217px;
+    max-width: 300px;
+    min-width: 300px;
+    height: 180px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-color: $cor-4 !important;
+    resize: none;
+    padding: 15px 15px;
+    transition: 0.3s;
+
+    @include d(m) {
+      transform: scale(.9);
+
+    }
+  }
+
+
+  textarea:focus {
+    border-color: $cor-1 !important;
+
+  }
+
+
+
+  .submit {
+
+    border: 1px solid $cor-1;
+    padding: 10px 45px;
+    letter-spacing: .5px;
+    font-weight: 500;
+    transition: background .3s ease-in-out;
+    display: inline-block;
+    margin: 10px auto;
+    cursor: pointer;
+
+    &:hover {
+      background: $cor-2;
+      color: white;
+      border: 1px solid rgba(0, 0, 0, .3);
+    }
+
+    @include d(m) {
+      margin: 0 auto;
+      display: block;
+      max-width: 200px;
+    }
+
+  }
+}

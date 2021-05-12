@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sintrus.io</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kiwi+Maru:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/assets/sass/style.css">
+
+</head>
+
+
+<body>
+  <header class="container__header">
+
+    <section class="formulario">
+      <div class="formulario__inner">
+        <h1>Sintrus.io</h1>
+        <h2>Faça seu login</h2>
+        <div class="btn__container">
+          <button type="button" class="btn loguin" id="btn__intro-signin">Login</button>
+          <button type="button" class="btn cadastro" id="btn__intro-signup">Cadastre-se</button>
+          <span class="btn__bg"></span>
+        </div>
+        <div class="formulario__input">
+          <div class="formulario__wrapper login" id="telaLogin">
+            <form action="">
+              <div class="input__box input__check input__cpf-container">
+                <input class="input__cpf" type="text" id="cpf-1" value="" name="cpf"
+                  onkeydown="javascript: fMasc( this, mCPF );" required="required">
+
+
+                <span>CPF</span>
+              </div>
+              <div class="input__box">
+                <i class="show__password"></i>
+                <input id="senha" type="password" value="" required="required">
+                <span>Senha</span>
+
+              </div>
+              <a href="#" class="remember">Esqueceu a senha?</a>
+
+              <button class="submit" id="submit-login" type="submit" required="required" onclick="ValidaCPF();">Acessar</button>
+            </form>
+          </div>
+
+          <div class="formulario__wrapper cadastro" id="telaCadastro">
+            <form action="">
+              <div class="input__box">
+                <input id="email" type="text" value="" required="required">
+                <span>E-mail</span>
+
+              </div>
+              <div class="input__box">
+                <input id="nome" type="text" value="" required="required">
+                <span>Nome</span>
+              </div>
+
+              <div class="input__box ">
+                <input id="cpf" type="number" value="" required="required">
+                <span>CPF</span>
+              </div>
+
+              <button class="submit" id="submit-cadastro" type="submit">Cadastre-se</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="azul">
+      <div class="azul__img">
+        <img src="./assets/img/mao.png">
+      </div>
+
+    </section>
+
+  </header>
+
+  <script>
+    //remove aria form7
+    const inputs = document.querySelectorAll('input')
+    inputs.forEach((i) => {
+      i.removeAttribute('aria-required')
+      i.setAttribute('required', "")
+  
+    })
+  </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+  integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+  crossorigin="anonymous"></script>
+<script src="assets/js/script.js"></script>
+
+</html>

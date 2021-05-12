@@ -1,0 +1,27 @@
+{
+  "liveSassCompile.settings.formats": [
+
+      {
+          "format": "compressed", //compressed or expanded
+          "extensionName": ".css",
+          "savePath": "/assets/sass/" //diretorio para salvar o arquivo .css
+      },
+
+  ],
+  //lista de pasta para o compilador não compilar
+  "liveSassCompile.settings.excludeList": [
+
+      "**/node_modules/**",
+      ".vscode/**",
+      "**/slick/**",
+
+
+  ],
+  //config que gera .map e prefixa
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.autoprefix": [
+      "> 1%",
+      "last 2 versions"
+  ],
+
+}

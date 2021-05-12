@@ -1,0 +1,262 @@
+body {
+  height: 100vh;
+  min-height: 600px;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include d(m) {
+    min-height: initial;
+  }
+}
+
+.container__header {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 45% 65%;
+  overflow: hidden;
+
+  @include d(m) {
+    grid-template-columns: 100%;
+    grid-template-rows: 100% 0;
+    overflow: auto;
+  }
+}
+
+
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  padding: 10vh;
+  justify-content: flex-start;
+
+  @include d(m) {
+    padding: 5vh;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+  }
+
+
+
+  .formulario__inner {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: $font-dm;
+    color: $cor-preto-1;
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+
+    @include d(m) {
+      font-size: 4rem;
+    }
+
+    @include d(ss) {
+      font-size: 3rem;
+    }
+  }
+
+  h2 {
+    color: $cor-cinza-1;
+    font-family: $font-kiwi;
+    font-weight: 400;
+    margin-top: 3vh;
+    font-size: clamp(18px, 2vw, 32px);
+  }
+
+  .btn__container {
+    background: $cor-azul-4;
+    padding: 0px;
+    max-width: 390px;
+    border-radius: 25px;
+    margin: 5vh auto 0 auto;
+    /*  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center; */
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+
+    @include d(m) {
+      max-width: 370px;
+    }
+
+    //adr
+    button {
+      cursor: pointer;
+      z-index: 2;
+      width: 100%;
+
+      &.loguin {
+        color: #3c3c3b !important;
+      }
+    }
+
+    .btn__bg {
+      background: white;
+      position: absolute;
+      height: 86%;
+      width: 50%;
+      border-radius: 25px;
+      z-index: 1;
+      transition: all .5s ease;
+      left: 4px;
+
+      top: 0;
+      bottom: 0;
+      margin: auto 0px;
+    }
+
+    //
+    .btn {
+      font-family: $font-kiwi;
+      color: #fff;
+      font-size: 1rem;
+      // padding: 10px 55px;
+      border-radius: 25px;
+      margin: 0 auto;
+      text-align: center;
+
+
+      @include d(m) {
+        width: 100%;
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 0px;
+      }
+
+      @include d(ss) {
+        font-size: 0.625rem;
+      }
+    }
+
+    // .btn__ativo {
+    //   background: #fff;
+    //   color: $cor-azul-2;
+    // }
+  }
+
+}
+
+.formulario__input {
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+
+  @include d(m) {
+    width: 100%;
+
+    max-width: 440px;
+  }
+
+  .login {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transition: all .4s ease;
+
+  }
+
+  .cadastro {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transition: all .4s ease;
+    transform: translateX(110%); 
+
+  }
+
+
+}
+
+
+
+
+
+.azul {
+  background-color: $cor-azul-1;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  .azul__img {
+    margin-right: 100px;
+    justify-self: center;
+
+    @include d(m) {
+      display: none;
+    }
+
+    img {
+      max-width: 650px;
+    }
+
+  }
+
+
+}
+
+//animation
+
+.formulario {
+  
+  &.loguin {
+    .formulario__wrapper.login {
+      transform: translateX(0);
+    }
+
+    .btn__bg {
+      transform: translateX(0);
+    }
+
+    button.loguin {
+      color: #3c3c3b !important;
+    }
+
+    button.cadastro {
+      color: white !important;
+
+    }
+  }
+
+  &.cadastro {
+    .formulario__wrapper.login {
+      transform: translateX(-110%);
+    }
+
+    .formulario__wrapper.cadastro {
+      transform: translateX(0%);
+    }
+
+    .btn__bg {
+      transform: translateX(calc(100% - 8px))
+    }
+
+    button.cadastro {
+      color: #3c3c3b !important;
+    }
+
+    button.loguin {
+      color: white !important;
+
+      &.hover {
+        color: #3c3c3b !important;
+      }
+    }
+  }
+}
