@@ -6,11 +6,10 @@ if (formSintrus) {
   const azul = document.querySelector(".azul")
   const tituloForm = document.querySelector(".formulario__inner h2")
 
-
+  //transicao do formulario
   if (formulario) {
     const botaoLoguin = document.querySelector(".btn.loguin")
     const botaoCadastro = document.querySelector(".btn.cadastro")
-
     botaoCadastro.addEventListener("click", mudaFormCadastro)
     botaoLoguin.addEventListener("click", mudaFormLoguin)
 
@@ -38,17 +37,14 @@ if (formSintrus) {
 
   }
 
-
+  //add eventos em todos inputs CPF
   const inputCPF = document.querySelectorAll(".input__cpf")
   inputCPF.forEach((i) => {
     i.addEventListener("focusout", ValidaCPF)
-    // console.log(i);
+
   })
 
-  // inputCPF.forEach((i) => {
-  //   i.addEventListener("keypress", ValidaCPF)
-  // })
-
+  // validar cpf
   function ValidaCPF() {
     var RegraValida = this.value;
     const containerInput = this.parentElement
@@ -64,7 +60,7 @@ if (formSintrus) {
     }
   }
 
-  //mascara
+  //mascara cpf
   function fMasc(objeto, mascara) {
     obj = objeto
     masc = mascara
@@ -94,7 +90,39 @@ if (formSintrus) {
     input.type == 'text' ? item.classList.add("mostra") : item.classList.remove("mostra");
 
   }
+  //evento senha
   botaoMostra.forEach((i) => {
     i.addEventListener("click", mostraSenha)
   })
+
+  //validar email
+
+
+  function validateEmailFinal() {
+    const valueEmail = this.value
+
+    function validateEmail() {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(valueEmail);
+    }
+
+    if (validateEmail() == true) {
+      this.parentElement.classList.add("email__valido")
+      this.parentElement.classList.remove("email__invalido")
+    } else if (validateEmail() == false) {
+      this.parentElement.classList.add("email__invalido")
+      this.parentElement.classList.remove("email__valido")
+
+    }
+  }
+
+
+  const inputsEmail = document.querySelectorAll(".input__email")
+  inputsEmail.forEach((i) => {
+    i.addEventListener("focusout", validateEmailFinal)
+
+  })
+
+
+
 }

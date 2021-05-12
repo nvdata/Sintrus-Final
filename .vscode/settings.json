@@ -4,7 +4,7 @@
       {
           "format": "compressed", //compressed or expanded
           "extensionName": ".css",
-          "savePath": "/css/" //diretorio para salvar o arquivo .css
+          "savePath": "assets/css/" //diretorio para salvar o arquivo .css
       },
 
   ],

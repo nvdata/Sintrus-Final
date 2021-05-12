@@ -3,7 +3,18 @@ $cor-2:rgb(111, 1, 255);
 $cor-4:rgb(58, 58, 58);
 
 
+@mixin bg-props-contain {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
 
+@mixin bg-props-cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
 form {
     position: relative;
     display: flex;
@@ -34,19 +45,32 @@ form {
     }
 }
 
+.email__valido {
+    &.input__box::after {
+        content: "";
+        background: url("../img/done.svg");
+        height: 20px;
+        width: 50px;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -20px;
+    }
+}
+
+.email__invalido {
+    &.input__box::after {
+        content: "";
+        background: url("../img/close.svg");
+        height: 25px;
+        width: 25px;
+        @include bg-props-contain();
+        position: absolute;
+        right: 5px;
+    }
+}
+
 //background
-@mixin bg-props-contain {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
 
-@mixin bg-props-cover {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-}
 
 .cpf__invalido {
     &.input__box::after {
@@ -268,7 +292,7 @@ textarea:focus {
     }
 }
 
-.show__password{
+.show__password {
     @include bg-props-contain;
     position: absolute;
     right: 20px;
@@ -280,11 +304,12 @@ textarea:focus {
     bottom: 0;
     margin: auto 0;
     background-image: url("../img/eye.svg");
-    opacity:.3;
+    opacity: .3;
     cursor: pointer;
     z-index: 2;
-    &.mostra{
-    background-image: url("../img/eye-slash.svg");
+
+    &.mostra {
+        background-image: url("../img/eye-slash.svg");
 
     }
 }
