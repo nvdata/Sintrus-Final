@@ -60,6 +60,7 @@ if (formulario) {
 const inputCPF = document.querySelectorAll(".input__cpf")
 inputCPF.forEach((i) => {
   i.addEventListener("focusout", ValidaCPF)
+  // console.log(i);
 })
 
 // inputCPF.forEach((i) => {
@@ -67,17 +68,25 @@ inputCPF.forEach((i) => {
 // })
 
 function ValidaCPF() {
-  var RegraValida = document.querySelector(".input__cpf").value;
-  const containerInput = document.querySelector(".input__cpf-container")
+  var RegraValida = this.value;
+  const containerInput = document.querySelectorAll(".input__cpf-container")
   var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
   if (cpfValido.test(RegraValida) == true) {
     // alert("CPF Válido");
-    containerInput.classList.add("cpf__valido")
-    containerInput.classList.remove("cpf__invalido")
+    containerInput.forEach((i) => {
+      i.classList.add("cpf__valido")
+    })
+    containerInput.forEach((i) => {
+      i.classList.remove("cpf__invalido")
+    })
   } else {
     // alert("CPF Inválido");
-    containerInput.classList.remove("cpf__valido")
-    containerInput.classList.add("cpf__invalido")
+    containerInput.forEach((i) => {
+      i.classList.remove("cpf__valido")
+    })
+    containerInput.forEach((i) => {
+      i.classList.add("cpf__invalido")
+    })
   }
 }
 
